@@ -34,27 +34,21 @@ public class Hardware {
         //intialize motors
         rf = hwMap.get(DcMotor.class, "rf");
         rf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rf.setPower(0);
 
         lf = hwMap.get(DcMotor.class, "lf");
         lf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        lf.setDirection(DcMotorSimple.Direction.REVERSE);
-        lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lf.setPower(0);
 
         lb = hwMap.get(DcMotor.class, "lb");
         lb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        lb.setDirection(DcMotorSimple.Direction.REVERSE);
-        lb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         lb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lb.setPower(0);
 
         rb = hwMap.get(DcMotor.class, "rb");
         rb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rb.setPower(0);
 
