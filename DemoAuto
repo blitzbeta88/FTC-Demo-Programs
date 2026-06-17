@@ -35,21 +35,21 @@ public class DemoAuto extends LinearOpMode {
     public void move(double distance, double speed) {
 
         //converting ticks to inches - change to match the wheels and motors you are using
-        double wheelCirumference = 4 * Math.PI;
-        double motor = 560;
+        double wheelCirumference = 4 * Math.PI; //assumes wheel is 4 inches
+        double motor = 537.7; //ticks per revolution
         double ticks = (distance * (motor/wheelCirumference));
+    
+        //resetting encoders so that previously stored values are not used
+        robot.rf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.rb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.lb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         //type casting ticks to be an integer to match required varible type
         robot.rf.setTargetPosition((int) Math.round(ticks));
         robot.lf.setTargetPosition((int) Math.round(ticks));
         robot.rb.setTargetPosition((int) Math.round(ticks));
         robot.lb.setTargetPosition((int) Math.round(ticks));
-
-        //resetting encoders so that previously stored values are not used
-        robot.rf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.rb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.lb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         //set run to position
         robot.rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
